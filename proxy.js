@@ -1,13 +1,15 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const fetch = require('node-fetch');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 // Sua chave OpenRouter (NUNCA exponha no frontend)
-const OPENROUTER_API_KEY = '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';
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
+console.log('OPENROUTER_API_KEY:', OPENROUTER_API_KEY ? 'DEFINIDA' : 'NÃO DEFINIDA');
 
 // Base de perguntas/respostas simuladas
 const faqs = [
@@ -127,12 +129,14 @@ Responda sempre de forma clara, profissional e objetiva.
   }
 
   try {
+    const headers = {
+      'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
+      'Content-Type': 'application/json'
+    };
+    console.log('Header Authorization enviado:', headers['Authorization']);
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
-        'Content-Type': 'application/json'
-      },
+      headers,
       body: JSON.stringify({
         model: 'openai/gpt-3.5-turbo',
         messages: [

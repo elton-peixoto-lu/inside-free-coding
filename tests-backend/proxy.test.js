@@ -3,7 +3,7 @@ let app;
 let server;
 
 beforeAll((done) => {
-  app = require('./proxy');
+  app = require('../proxy');
   server = app.listen(4001, done); // Sobe o servidor em uma porta diferente
 });
 

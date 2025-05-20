@@ -1,39 +1,10 @@
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from 'firebase/auth';
-// import jsPDF from 'jspdf';
-// import 'jspdf-autotable';
+import { downloadPDF } from '../../utils/pdf';
 
-// Novo componente reutilizável para ações do post
 function BlogPostActions({ title, date, slug, fontSize, setFontSize, yamlRef, onCopyYAML, contentText }) {
-  // PDF
   function handleDownloadPDF() {
-    import('jspdf').then(jsPDFModule => {
-      const jsPDF = jsPDFModule.default;
-      const doc = new jsPDF();
-      let y = 15;
-      doc.setFontSize(18);
-      doc.setTextColor('#E94E1B');
-      doc.text(title, 10, y);
-      y += 10;
-      doc.setFontSize(12);
-      doc.setTextColor('#333');
-      doc.text(`Autor: Elton Peixoto`, 10, y);
-      y += 7;
-      if (date) {
-        doc.text(`Data: ${date}`, 10, y);
-        y += 7;
-      }
-      doc.setFontSize(10);
-      doc.setTextColor('#111');
-      // Conteúdo real do artigo
-      const lines = (contentText || 'Conteúdo do artigo disponível no site.').split('\n');
-      lines.forEach(line => {
-        if (y > 270) { doc.addPage(); y = 15; }
-        doc.text(line, 10, y); y += 7;
-      });
-      doc.save(`${slug || 'artigo'}.pdf`);
-    });
+    downloadPDF({ title, date, slug, contentText });
   }
   // Reactions
   const [reactions, setReactions] = React.useState({ like: 0, love: 0, clap: 0, think: 0 });
@@ -58,7 +29,7 @@ function BlogPostActions({ title, date, slug, fontSize, setFontSize, yamlRef, on
   );
 }
 
-export function BlogPost({slug,title,excerpt, date}){
+export function BlogPost({ slug, title, excerpt, date }) {
   // Zoom de fonte
   const [fontSize, setFontSize] = useState(1);
   // Copiar YAML
@@ -80,7 +51,7 @@ export function BlogPost({slug,title,excerpt, date}){
     { id: 'conclusao', label: '8. Conclusão' },
     { id: 'refs', label: 'Referências' },
   ];
-  if(slug==='well-architected-interno'){
+  if (slug === 'well-architected-interno') {
     return (
       <article className="mb-10 border-b pb-8">
         <h3 className="text-2xl font-bold text-[#E94E1B] mb-2">{title}</h3>
@@ -89,16 +60,16 @@ export function BlogPost({slug,title,excerpt, date}){
         <nav className="mb-6 bg-[#FFE5D0] rounded p-3 text-sm max-w-2xl mx-auto">
           <span className="font-bold text-[#E94E1B]">Sumário:</span>
           <ul className="flex flex-wrap gap-3 mt-2">
-            {toc.map(t=>(
+            {toc.map(t => (
               <li key={t.id}><a href={`#${t.id}`} className="text-[#E94E1B] hover:underline font-semibold">{t.label}</a></li>
             ))}
           </ul>
         </nav>
-        <div className="bg-[#FFF3E6] rounded-lg shadow p-6 mb-4 text-left max-w-2xl mx-auto relative overflow-x-auto" style={{fontSize: `${fontSize}em`}}>
+        <div className="bg-[#FFF3E6] rounded-lg shadow p-6 mb-4 text-left max-w-2xl mx-auto relative overflow-x-auto" style={{ fontSize: `${fontSize}em` }}>
           <div className="prose max-w-none text-gray-800">
             <p className="mb-2"><b>Resumo:</b> Este artigo apresenta uma abordagem para implementar um <span className="text-[#E94E1B] font-semibold">Well-Architected Interno</span> em ambientes multi-conta AWS, estendendo o <a href="https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html" target="_blank" rel="noopener noreferrer" className="text-[#E94E1B] underline font-semibold">AWS Well-Architected Framework</a> com políticas e automações que atendem a requisitos de negócio, regulatórios (<a href="https://www.lgpdbrasil.com.br/" target="_blank" rel="noopener noreferrer" className="text-[#E94E1B] underline">LGPD</a>, GDPR) e fiscais (CNPJ, entidades pagadoras). A estratégia centraliza o <a href="https://cloudcustodian.io/docs/" target="_blank" rel="noopener noreferrer" className="text-[#E94E1B] underline font-semibold">Cloud Custodian</a> para enforcement e remediação automática de configurações obrigatórias, com suporte de SCPs, Terraform, tagging estratégico e provisionamento via AWS Organizations.</p>
             <h4 id="intro" className="font-bold text-[#E94E1B] mt-4">1. Introdução</h4>
-            <p>Empresas que operam em ambientes multi-cloud enfrentam desafios de governança, compliance, auditoria e controle de custos. O <b>AWS Well-Architected Framework</b> oferece diretrizes genéricas para resiliência e segurança, mas muitas vezes não captura requisitos específicos de negócio, fiscais e regulatórios de cada organização.<br/>Um <b>Well-Architected Interno</b> estende essas diretrizes, incorporando mandatory configurations e automações tailor-made, alinhando a infraestrutura à estratégia corporativa e às normas locais (<a href="https://www.lgpdbrasil.com.br/" target="_blank" rel="noopener noreferrer" className="text-[#E94E1B] underline">LGPD</a>, GDPR).</p>
+            <p>Empresas que operam em ambientes multi-cloud enfrentam desafios de governança, compliance, auditoria e controle de custos. O <b>AWS Well-Architected Framework</b> oferece diretrizes genéricas para resiliência e segurança, mas muitas vezes não captura requisitos específicos de negócio, fiscais e regulatórios de cada organização.<br />Um <b>Well-Architected Interno</b> estende essas diretrizes, incorporando mandatory configurations e automações tailor-made, alinhando a infraestrutura à estratégia corporativa e às normas locais (<a href="https://www.lgpdbrasil.com.br/" target="_blank" rel="noopener noreferrer" className="text-[#E94E1B] underline">LGPD</a>, GDPR).</p>
             <h4 id="mandatory" className="font-bold text-[#E94E1B] mt-4">2. Mandatory Configurations e Tagging Estratégico</h4>
             <p>A base de um Well-Architected Interno é a imposição de configurações obrigatórias, especialmente o tagging estratégico de recursos com metadados críticos:</p>
             <ul className="list-disc ml-6">
@@ -174,14 +145,14 @@ export function BlogPost({slug,title,excerpt, date}){
       </article>
     );
   }
-  if(slug==='resiliencia-incidentes'){
+  if (slug === 'resiliencia-incidentes') {
     const contentText = `Resumo: Como preparar sua infraestrutura para falhas e garantir continuidade do negócio.\n\n1. Introdução\nA resiliência em incidentes é fundamental para empresas que dependem de sistemas digitais. Falhas podem ocorrer a qualquer momento, e a capacidade de responder rapidamente faz toda a diferença para minimizar impactos.\n\n2. Práticas de Engenharia de Resiliência\n- Monitoramento proativo: Utilize ferramentas como Prometheus, Grafana e Datadog para identificar anomalias antes que se tornem incidentes críticos.\n- Automação de respostas: Implemente scripts e playbooks para respostas automáticas a eventos recorrentes.\n- Chaos Engineering: Realize testes controlados de falha (ex: Chaos Monkey) para validar a robustez dos sistemas.\n\n3. SRE e Cultura de Incidentes\n- SRE (Site Reliability Engineering): Adote práticas de SRE para balancear inovação e estabilidade.\n- Post-mortem: Documente e analise incidentes para aprendizado contínuo.\n\n4. Ferramentas e Referências\n- Google SRE Book: https://sre.google/sre-book/incident-response/\n- DevOps Blog: https://devops.com/`;
     return (
       <article className="mb-10 border-b pb-8">
         <h3 className="text-2xl font-bold text-[#E94E1B] mb-2">Resiliência em Incidentes</h3>
         <div className="text-sm text-gray-700 mb-2">Autor: <span className="font-semibold text-[#E94E1B]">Elton Peixoto</span></div>
         <BlogPostActions title={title} date={date} slug={slug} fontSize={fontSize} setFontSize={setFontSize} contentText={contentText} />
-        <div className="bg-[#FFF3E6] rounded-lg shadow p-6 mb-4 text-left max-w-2xl mx-auto relative overflow-x-auto" style={{fontSize: `${fontSize}em`}}>
+        <div className="bg-[#FFF3E6] rounded-lg shadow p-6 mb-4 text-left max-w-2xl mx-auto relative overflow-x-auto" style={{ fontSize: `${fontSize}em` }}>
           <div className="prose max-w-none text-gray-800">
             <p><b>Resumo:</b> Como preparar sua infraestrutura para falhas e garantir continuidade do negócio.</p>
             <h4 className="font-bold text-[#E94E1B] mt-4">1. Introdução</h4>
@@ -207,14 +178,14 @@ export function BlogPost({slug,title,excerpt, date}){
       </article>
     );
   }
-  if(slug==='automatizacao-devops'){
+  if (slug === 'automatizacao-devops') {
     const contentText = `Resumo: Estratégias para pipelines eficientes e entregas contínuas.\n\n1. Introdução\nA automação é o coração do DevOps moderno. Automatizar pipelines reduz erros, acelera entregas e libera tempo para inovação.\n\n2. Pipelines de CI/CD\n- Ferramentas: GitHub Actions, GitLab CI, Jenkins, CircleCI.\n- Boas práticas: Versionamento de infraestrutura (IaC), testes automatizados, deploys blue/green e rollback seguro.\n\n3. Infraestrutura como Código (IaC)\n- Terraform e Pulumi: Automatize o provisionamento de ambientes multi-cloud.\n- Governança: Use módulos reutilizáveis e políticas de segurança.\n\n4. Dicas para Eficiência\n- Integre validações de segurança no pipeline.\n- Monitore métricas de build e deploy.\n\n5. Referências\n- DevOps.com: https://devops.com/\n- Terraform Docs: https://www.terraform.io/docs/`;
     return (
       <article className="mb-10 border-b pb-8">
         <h3 className="text-2xl font-bold text-[#E94E1B] mb-2">Automatização DevOps</h3>
         <div className="text-sm text-gray-700 mb-2">Autor: <span className="font-semibold text-[#E94E1B]">Elton Peixoto</span></div>
         <BlogPostActions title={title} date={date} slug={slug} fontSize={fontSize} setFontSize={setFontSize} contentText={contentText} />
-        <div className="bg-[#FFF3E6] rounded-lg shadow p-6 mb-4 text-left max-w-2xl mx-auto relative overflow-x-auto" style={{fontSize: `${fontSize}em`}}>
+        <div className="bg-[#FFF3E6] rounded-lg shadow p-6 mb-4 text-left max-w-2xl mx-auto relative overflow-x-auto" style={{ fontSize: `${fontSize}em` }}>
           <div className="prose max-w-none text-gray-800">
             <p><b>Resumo:</b> Estratégias para pipelines eficientes e entregas contínuas.</p>
             <h4 className="font-bold text-[#E94E1B] mt-4">1. Introdução</h4>
@@ -249,7 +220,7 @@ export function BlogPost({slug,title,excerpt, date}){
       <h3 className="text-2xl font-bold text-[#E94E1B] mb-2"><Link to={`/blog/${slug}`} className="hover:underline">{title}</Link></h3>
       <div className="text-sm text-gray-700 mb-2">Autor: <span className="font-semibold text-[#E94E1B]">Elton Peixoto</span></div>
       <BlogPostActions title={title} date={date} slug={slug} fontSize={fontSize} setFontSize={setFontSize} />
-      <p className="text-gray-700" style={{fontSize: `${fontSize}em`}}>{excerpt}</p>
+      <p className="text-gray-700" style={{ fontSize: `${fontSize}em` }}>{excerpt}</p>
     </article>
   );
 }  
