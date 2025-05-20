@@ -36,7 +36,7 @@ export default function Navbar({ onContatoClick }) {
     <header className="bg-gradient-to-r from-[#F9C59C] to-[#E94E1B] py-4">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
         <Link to="/">
-          <img src="src/components/logo.png" alt="Logo IFC" className="h-16 cursor-pointer" />
+          <img src="/logo.png" alt="Logo IFC" className="h-16 cursor-pointer" />
         </Link>
         <nav className="hidden md:flex space-x-8 text-white relative">
           <Link to="/" className="hover:opacity-80 transition duration-300 hover:shadow-lg hover:scale-105 focus:outline-none">HOME</Link>

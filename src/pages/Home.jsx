@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import logo from '../components/logo.png';
 
 const items = [
   {
@@ -112,7 +111,7 @@ export function Home() {
         id="news-preview"
         className="py-16 bg-white mt-16 relative overflow-hidden"
         style={{
-          backgroundImage: `url(${logo}), url(${logo})`,
+          backgroundImage: `url('/logo.png'), url('/logo.png')`,
           backgroundSize: '120px 120px',
           backgroundPosition: '0 0, 60px 60px',
           backgroundRepeat: 'repeat',

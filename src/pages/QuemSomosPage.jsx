@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../components/logo.png';
 
 const people = [
   {
@@ -79,7 +78,7 @@ export default function QuemSomosPage() {
     <section
       className="py-16 min-h-[70vh] bg-white relative overflow-hidden"
       style={{
-        backgroundImage: `url(${logo}), url(${logo})`,
+        backgroundImage: `url('/logo.png'), url('/logo.png')`,
         backgroundSize: '120px 120px',
         backgroundPosition: '0 0, 60px 60px',
         backgroundRepeat: 'repeat',
