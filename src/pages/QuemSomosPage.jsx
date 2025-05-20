@@ -90,7 +90,7 @@ export default function QuemSomosPage() {
         <h2 className="text-3xl font-bold mb-10 text-[#E94E1B]">Sobre Nós</h2>
         <div className="bg-[#FFF3E6] text-[#E94E1B] italic px-6 py-4 rounded shadow font-medium text-base leading-snug max-w-2xl mx-auto mb-10">
           Somos uma equipe apaixonada por tecnologia, inovação e excelência em engenharia de software. Nosso objetivo é entregar soluções robustas, eficientes e escaláveis, sempre com foco nas necessidades dos nossos clientes. Acreditamos em colaboração, aprendizado contínuo e no poder da tecnologia para transformar negócios e impactar positivamente a sociedade.<br /><br />
-          Nossa missão é simplificar o complexo, promover autonomia e entregar resultados que realmente fazem a diferença. Estamos prontos para enfrentar desafios e construir o futuro junto com você.
+          <b>[Deploy Test]</b> Nossa missão é simplificar o complexo, promover autonomia e entregar resultados que realmente fazem a diferença. Estamos prontos para enfrentar desafios e construir o futuro junto com você.
         </div>
       </div>
     </section>
