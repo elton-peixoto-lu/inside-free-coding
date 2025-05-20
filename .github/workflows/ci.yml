@@ -22,9 +22,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Run backend tests
-        run: |
-          npm install --save-dev jest supertest
-          npx jest proxy.test.js
+        run: npm run test
 
   frontend:
     runs-on: ubuntu-latest
@@ -41,8 +39,6 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Run frontend tests
-        run: |
-          npm install --save-dev vitest @testing-library/react jsdom
-          npx vitest run
+        run: npm run test:frontend
       - name: Build frontend
         run: npm run build 

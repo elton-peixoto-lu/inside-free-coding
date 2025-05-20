@@ -181,5 +181,10 @@ Responda sempre de forma clara, profissional e objetiva.
   }
 });
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log('Proxy rodando na porta', PORT)); 
+if (require.main === module) {
+  // Só sobe o servidor se rodar diretamente: node proxy.js
+  const PORT = process.env.PORT || 3001;
+  app.listen(PORT, () => console.log('Proxy rodando na porta', PORT));
+}
+
+module.exports = app; 
