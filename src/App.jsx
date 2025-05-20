@@ -118,10 +118,10 @@ function ChatSuporte() {
 
   // Perguntas frequentes
   const faqs = [
-    { question: 'Qual o número para suporte?', answer: 'Você pode falar com Elton: +55 11 08309-0297 ou Raiti: 11 95970-6057.' },
-    { question: 'Quais os horários de atendimento?', answer: 'Atendemos 24x7 para clientes ativos.' },
-    { question: 'Como contratar?', answer: 'Fale com nosso time comercial pelo formulário ou pelos números acima.' },
-    { question: 'Quais serviços vocês oferecem?', answer: 'Oferecemos consultoria em nuvem, engenharia de dados, observabilidade e gestão de times.' },
+    { question: 'Qual o número para suporte?' },
+    { question: 'Quais os horários de atendimento?' },
+    { question: 'Como contratar?' },
+    { question: 'Quais serviços vocês oferecem?' },
   ];
 
   // Filtro simples para baixo calão (pode ser expandido)
@@ -132,12 +132,6 @@ function ChatSuporte() {
 
   // Checa se é FAQ
   function getFaqAnswer(text) {
-    const q = text.toLowerCase();
-    for (const faq of faqs) {
-      if (q.includes(faq.question.toLowerCase().replace(/[?]/g, ''))) {
-        return faq.answer;
-      }
-    }
     return null;
   }
 
