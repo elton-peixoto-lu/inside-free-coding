@@ -23,11 +23,14 @@ function ContatoModal({ open, onClose }) {
           <a href="https://wa.me/5599999999999" target="_blank" rel="noopener noreferrer" title="WhatsApp">
             <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" className="h-8 w-8" />
           </a>
-          <a href="mailto:contato@insidefreecoding.com" target="_blank" rel="noopener noreferrer" title="E-mail">
+          <a href="mailto:insidefreecoding@gmail.com" target="_blank" rel="noopener noreferrer" title="E-mail">
             <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="E-mail" className="h-8 w-8" />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+          <a href="https://www.linkedin.com/in/elton-peixoto-914452296/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
             <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" className="h-8 w-8" />
+          </a>
+          <a href="https://github.com/elton-peixoto-lu" target="_blank" rel="noopener noreferrer" title="GitHub">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" className="h-8 w-8" />
           </a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">
             <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" className="h-8 w-8" />
@@ -93,8 +96,8 @@ function Footer() {
       <div className="max-w-4xl mx-auto px-4 text-center">
         <p className="text-lg font-semibold">Inside Free Coding &copy; {new Date().getFullYear()} - Todos os direitos reservados</p>
         <div className="flex justify-center gap-4 mt-4">
-          <a href="https://www.linkedin.com/in/eltonpeixoto/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:opacity-80"><svg width="24" height="24" fill="currentColor" className="inline"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/></svg></a>
-          <a href="https://github.com/eltonpeixoto" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:opacity-80"><svg width="24" height="24" fill="currentColor" className="inline"><path d="M12 0c-6.63 0-12 5.37-12 12 0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.236-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.984-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.218.694.825.576 4.765-1.587 8.2-6.086 8.2-11.384 0-6.63-5.373-12-12-12z"/></svg></a>
+          <a href="https://www.linkedin.com/in/elton-peixoto-914452296/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:opacity-80"><svg width="24" height="24" fill="currentColor" className="inline"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/></svg></a>
+          <a href="https://github.com/elton-peixoto-lu" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:opacity-80"><svg width="24" height="24" fill="currentColor" className="inline"><path d="M12 0c-6.63 0-12 5.37-12 12 0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.236-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.984-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.218.694.825.576 4.765-1.587 8.2-6.086 8.2-11.384 0-6.63-5.373-12-12-12z"/></svg></a>
           <a href="https://www.youtube.com/@insidefreecoding" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="hover:opacity-80"><svg width="24" height="24" fill="currentColor" className="inline"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.112-2.112c-1.863-.504-9.386-.504-9.386-.504s-7.523 0-9.386.504a2.994 2.994 0 0 0-2.112 2.112c-.504 1.863-.504 5.754-.504 5.754s0 3.891.504 5.754a2.994 2.994 0 0 0 2.112 2.112c1.863.504 9.386.504 9.386.504s7.523 0 9.386-.504a2.994 2.994 0 0 0 2.112-2.112c.504-1.863.504-5.754.504-5.754s0-3.891-.504-5.754zm-13.498 9.314v-7l6.5 3.5-6.5 3.5z"/></svg></a>
         </div>
       </div>
@@ -175,7 +178,7 @@ function ChatSuporte() {
           buttons.push({ label: '💬 WhatsApp Raiti', url: `https://wa.me/5511959708057?text=${msg}` });
         }
         if (/contato@insidefreecoding\.com|E-mail|email/i.test(faq)) {
-          buttons.push({ label: '✉️ E-mail', url: `mailto:contato@insidefreecoding.com?subject=Ajuda%20via%20site&body=${msg}` });
+          buttons.push({ label: '✉️ E-mail', url: `mailto:insidefreecoding@gmail.com?subject=Ajuda%20via%20site&body=${msg}` });
         }
         const humanSupport = {
           title: '👤 Atendimento Humano',
@@ -210,7 +213,7 @@ function ChatSuporte() {
           buttons.push({ label: '💬 WhatsApp Raiti', url: `https://wa.me/5511959708057?text=${msg}` });
         }
         if (/contato@insidefreecoding\.com|E-mail|email/i.test(answer)) {
-          buttons.push({ label: '✉️ E-mail', url: `mailto:contato@insidefreecoding.com?subject=Ajuda%20via%20site&body=${msg}` });
+          buttons.push({ label: '✉️ E-mail', url: `mailto:insidefreecoding@gmail.com?subject=Ajuda%20via%20site&body=${msg}` });
         }
         const humanSupport = {
           title: '👤 Atendimento Humano',

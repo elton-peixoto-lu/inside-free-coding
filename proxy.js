@@ -15,7 +15,19 @@ console.log('OPENROUTER_API_KEY:', OPENROUTER_API_KEY ? 'DEFINIDA' : 'NÃO DEFIN
 const faqs = [
   { q: /o que é cloud|o que é computação em nuvem/i, a: "Cloud, ou computação em nuvem, é o uso de servidores remotos para armazenar, gerenciar e processar dados via internet." },
   { q: /quais serviços vocês oferecem/i, a: "Oferecemos consultoria em nuvem, engenharia de dados, observabilidade, automação e gestão de times." },
-  { q: /como contratar|comercial/i, a: "Para contratar nossos serviços, basta entrar em contato pelo formulário ou WhatsApp. Nosso time comercial está à disposição!" },
+  { q: /como contratar|comercial/i, a: (pergunta) => {
+    const msg = encodeURIComponent(`Olá, preciso de ajuda: ${pergunta}`);
+    return {
+      type: 'human_support',
+      title: '👤 Atendimento Humano',
+      message: 'Fale agora com um especialista pelo canal de sua preferência:',
+      buttons: [
+        { label: '💬 WhatsApp Elton', url: `https://wa.me/5511983090287?text=${msg}` },
+        { label: '💬 WhatsApp Raiti', url: `https://wa.me/5511959706057?text=${msg}` },
+        { label: '✉️ E-mail', url: `mailto:insidefreecoding@gmail.com?subject=Ajuda%20via%20site&body=${msg}` }
+      ]
+    };
+  } },
   { q: /suporte|problema|erro/i, a: "Nosso suporte está disponível 24x7. Fale com Elton: +55 11 98309-0297 ou Raiti: 11 95970-6057." },
   { q: /segurança/i, a: "Trabalhamos com as melhores práticas de segurança em cloud, incluindo backups, criptografia e monitoramento contínuo." },
   { q: /backup/i, a: "Oferecemos soluções de backup automatizado e recuperação de desastres para garantir a segurança dos seus dados." },
@@ -52,11 +64,11 @@ const faqs = [
       buttons: [
         { label: '💬 WhatsApp Elton', url: `https://wa.me/5511083090297?text=${msg}` },
         { label: '💬 WhatsApp Raiti', url: `https://wa.me/5511959706057?text=${msg}` },
-        { label: '✉️ E-mail', url: `mailto:contato@insidefreecoding.com?subject=Ajuda%20via%20site&body=${msg}` }
+        { label: '✉️ E-mail', url: `mailto:insidefreecoding@gmail.com?subject=Ajuda%20via%20site&body=${msg}` }
       ]
     };
   } },
-  { q: /n(ú|u)mero( de contato)?|contato|telefone|whatsapp|n(ú|u)mero suporte|n(ú|u)mero para suporte|n(ú|u)mero do suporte/i, a: "Você pode falar com Elton: +55 11 98309-0297 ou Raiti: 11 95970-6057. Também pode enviar e-mail para contato@insidefreecoding.com." },
+  { q: /n(ú|u)mero( de contato)?|contato|telefone|whatsapp|n(ú|u)mero suporte|n(ú|u)mero para suporte|n(ú|u)mero do suporte/i, a: "Você pode falar com Elton: +55 11 98309-0297 ou Raiti: 11 95970-6057. Também pode enviar e-mail para insidefreecoding@gmail.com." },
 ];
 
 // Função para normalizar texto (remove acentos, caixa baixa, mantém espaços)
@@ -171,7 +183,7 @@ Responda sempre de forma clara, profissional e objetiva.
       iaAnswer += `\n\nEntre em contato direto:\n` +
         `WhatsApp Elton: https://wa.me/5511983090297?text=${msg}\n` +
         `WhatsApp Raiti: https://wa.me/5511959706057?text=${msg}\n` +
-        `E-mail: contato@insidefreecoding.com`;
+        `E-mail: insidefreecoding@gmail.com`;
     }
     res.json({ answer: iaAnswer });
   } catch (e) {

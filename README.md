@@ -134,3 +134,6 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ## 💡 Contato
 
 Se quiser trocar ideias sobre CI/CD, automação, integração de IA, Tailwind ou qualquer etapa do ciclo de desenvolvimento, fique à vontade para entrar em contato!
+
+- GitHub: [elton-peixoto-lu](https://github.com/elton-peixoto-lu)
+- LinkedIn: [Elton Peixoto](https://www.linkedin.com/in/elton-peixoto-914452296/)
