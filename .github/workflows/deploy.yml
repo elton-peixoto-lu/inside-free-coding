@@ -1,0 +1,19 @@
+name: Deploy to Render and Vercel
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy-render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Render
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+
+  deploy-vercel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm install -g vercel
+      - run: vercel --prod --token=${{ secrets.VERCEL_TOKEN }} 
