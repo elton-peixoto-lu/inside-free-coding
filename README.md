@@ -1,5 +1,10 @@
 # 🚀 Site Institucional Moderno – Fullstack, CI/CD, Testes, Deploy e IA
 
+[![CI](https://github.com/elton-peixoto-lu/inside-free-coding/actions/workflows/ci.yml/badge.svg)](https://github.com/elton-peixoto-lu/inside-free-coding/actions/workflows/ci.yml)
+[![Deploy - Vercel](https://img.shields.io/badge/deploy-vercel-brightgreen?logo=vercel)](https://vercel.com/)
+[![Deploy - Render](https://img.shields.io/badge/deploy-render-brightgreen?logo=render)](https://render.com/)
+[![Stable](https://img.shields.io/badge/version-stable-brightgreen)](#)
+
 Este projeto é um **site institucional** completo, desenvolvido com as melhores práticas de desenvolvimento fullstack, automação, testes e integração de Inteligência Artificial. Ele demonstra como construir, testar e entregar uma aplicação moderna, robusta e escalável, pronta para produção.
 
 ---
