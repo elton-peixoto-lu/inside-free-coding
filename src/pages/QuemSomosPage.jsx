@@ -20,12 +20,13 @@ const people = [
   },
   {
     name: 'Raiti',
-    img: 'https://randomuser.me/api/portraits/men/33.jpg',
-    short: 'Engenheiro de Confiabilidade e DevOps',
-    bio: 'Focado em resiliência, automação, inovação em infraestrutura e liderança técnica em comunidades. Mentor e produtor de conhecimento aplicado ao dia a dia.',
+    img: 'https://randomuser.me/api/portraits/women/33.jpg',
+    short: 'Estudante de Engenharia da Computação, responsável por marketing e contratos',
+    bio: 'Raiti é estudante de Engenharia da Computação, responsável por marketing e contratos na Inside Free Coding. Mulher dedicada, traz visão estratégica, organização e comunicação para o time, além de atuar na interface com clientes e parceiros.',
     linkedin: 'https://www.linkedin.com/in/raiti/',
     github: 'https://github.com/raiti',
     tecnologias: [
+      'Marketing', 'Contratos', 'Comunicação', 'Gestão',
       'Clojure', 'Python', 'Go',
       'AWS', 'Terraform',
       'Prometheus', 'Grafana', 'Dynatrace',
@@ -87,10 +88,11 @@ export default function QuemSomosPage() {
     >
       <div className="absolute inset-0 bg-white opacity-80 pointer-events-none z-0" />
       <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-        <h2 className="text-3xl font-bold mb-10 text-[#E94E1B]">Sobre Nós</h2>
+        <h2 className="text-3xl font-bold mb-10 text-[#E94E1B]">Quem Somos</h2>
         <div className="bg-[#FFF3E6] text-[#E94E1B] italic px-6 py-4 rounded shadow font-medium text-base leading-snug max-w-2xl mx-auto mb-10">
-          Somos uma equipe apaixonada por tecnologia, inovação e excelência em engenharia de software. Nosso objetivo é entregar soluções robustas, eficientes e escaláveis, sempre com foco nas necessidades dos nossos clientes. Acreditamos em colaboração, aprendizado contínuo e no poder da tecnologia para transformar negócios e impactar positivamente a sociedade.<br /><br />
-          <b>[Deploy Test 2]</b> Nossa missão é simplificar o complexo, promover autonomia e entregar resultados que realmente fazem a diferença. Estamos prontos para enfrentar desafios e construir o futuro junto com você.
+          A Inside Free Coding nasceu para entregar engenharia de software de verdade: soluções robustas, responsáveis e enxutas, criadas por engenheiros que dominam o ciclo completo — da arquitetura à operação.<br /><br />
+          Fundada por <b>Elton Tadeu Peixoto Luiz</b> e <b>Raiti</b>, profissionais apaixonados por tecnologia, inovação e excelência. Elton é engenheiro de software com mais de 13 anos de experiência em empresas como Nubank, GrooveTech Code3, DXC, Tivit, Stefanini, Softvaro e Keggo, com foco em cloud, automação, engenharia de plataforma e confiabilidade. Raiti é estudante de Engenharia da Computação, responsável por marketing e contratos, trazendo visão estratégica, organização e comunicação para o time.<br /><br />
+          Nossa missão é simplificar o complexo, promover autonomia e entregar resultados que realmente fazem a diferença. Estamos prontos para enfrentar desafios e construir o futuro junto com você.
         </div>
       </div>
     </section>
