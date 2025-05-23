@@ -51,10 +51,11 @@ Este projeto é um **site institucional** completo, desenvolvido com as melhores
 ## ⚙️ Como rodar localmente
 
 1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repo.git
-   cd seu-repo
-   ```
+
+```bash
+git clone https://github.com/elton-peixoto-lu/inside-free-coding.git
+cd inside-free-coding
+```
 
 2. **Configure as variáveis de ambiente:**
    - Crie um arquivo `.env` na raiz do backend e defina as chaves necessárias (exemplo: `OPENROUTER_API_KEY`).
