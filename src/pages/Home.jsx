@@ -1,38 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-
-const items = [
-  {
-    title: 'Gestão Proativa de Incidentes',
-    anchor: 'gestao-incidentes',
-    desc: 'Antecipe, detecte e resolva incidentes antes que impactem o negócio.',
-    img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80',
-  },
-  {
-    title: 'Resposta Ágil a Incidentes',
-    anchor: 'resposta-incidentes',
-    desc: 'Ação rápida e coordenada para restaurar serviços críticos com o mínimo de impacto.',
-    img: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
-  },
-  {
-    title: 'Automação Inteligente de Infraestrutura',
-    anchor: 'automacao-infra',
-    desc: 'Reduza erros e ganhe escala com automação de provisionamento, monitoramento e manutenção.',
-    img: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80',
-  },
-  {
-    title: 'Consultoria em Confiabilidade e SRE',
-    anchor: 'confiabilidade-sre',
-    desc: 'Eleve a resiliência dos seus sistemas com práticas de Engenharia de Confiabilidade e SRE.',
-    img: 'https://images.unsplash.com/photo-1461344577544-4e5dc9487184?auto=format&fit=crop&w=400&q=80',
-  },
-  {
-    title: 'Cloud & DevOps de Alta Performance',
-    anchor: 'cloud-devops',
-    desc: 'Modernize sua infraestrutura com Cloud, CI/CD e cultura DevOps.',
-    img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
-  }
-];
+import { solucoes } from '../data/solucoes';
 
 export function Home() {
   const [index, setIndex] = React.useState(0);
@@ -52,7 +20,7 @@ export function Home() {
 
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((i) => (i + 1) % items.length);
+      setIndex((i) => (i + 1) % solucoes.length);
     }, 4000);
     return () => clearInterval(timer);
   }, []);
@@ -73,18 +41,18 @@ export function Home() {
       {/* Carrossel de Soluções */}
       <section className="py-16 bg-[#FFE5D0] min-h-[60vh] flex flex-col items-center justify-center">
         <div className="w-full max-w-md h-64 rounded-xl overflow-hidden shadow-lg mb-4 transition-all duration-700 bg-[#223040] bg-gradient-to-br from-[#223040] to-[#1a2533] relative">
-          <img src={items[index].img} alt={items[index].title} className="object-cover w-full h-full opacity-80" />
+          <img src={solucoes[index].img} alt={solucoes[index].title} className="object-cover w-full h-full opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#223040] via-transparent to-transparent opacity-80" />
         </div>
         <button
-          onClick={() => handleTitleClick(items[index].anchor)}
+          onClick={() => handleTitleClick(solucoes[index].anchor)}
           className="text-xl font-semibold mb-2 text-[#E94E1B] hover:underline focus:outline-none bg-transparent"
         >
-          {items[index].title}
+          {solucoes[index].title}
         </button>
-        <p className="text-gray-700 mb-4 text-center">{items[index].desc}</p>
+        <p className="text-gray-700 mb-4 text-center">{solucoes[index].desc}</p>
         <div className="flex justify-center gap-2 mt-2">
-          {items.map((_, i) => (
+          {solucoes.map((_, i) => (
             <button
               key={i}
               onClick={() => setIndex(i)}
