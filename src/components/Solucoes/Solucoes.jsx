@@ -146,13 +146,13 @@ export function Solucoes({ onContatoClick }) {
       <div className="max-w-4xl mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-8 text-[#F9C59C] drop-shadow">Soluções</h2>
         <div className="relative flex flex-col items-center justify-center">
-          <div id={[
-            'gestao-incidentes',
-            'resposta-incidentes',
-            'automacao-infra',
-            'confiabilidade-sre',
-            'cloud-devops',
-          ][index]} className="w-full max-w-md h-64 rounded-xl overflow-hidden shadow-lg mb-4 transition-all duration-700 bg-[#223040] bg-gradient-to-br from-[#223040] to-[#1a2533] relative">
+          <div
+            id={item.title
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/(^-|-$)/g, '')}
+            className="w-full max-w-md h-64 rounded-xl overflow-hidden shadow-lg mb-4 transition-all duration-700 bg-[#223040] bg-gradient-to-br from-[#223040] to-[#1a2533] relative"
+          >
             <img src={item.img} alt={item.title} className="object-cover w-full h-full opacity-80" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#223040] via-transparent to-transparent opacity-80" />
           </div>
