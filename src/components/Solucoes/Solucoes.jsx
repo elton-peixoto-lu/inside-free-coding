@@ -16,12 +16,12 @@ const items = [
     details: 'Monitoramento contínuo, alertas inteligentes e análise preditiva para evitar falhas antes que causem impacto.',
     definition: 'Gestão Proativa de Incidentes consiste em antecipar possíveis falhas, monitorar continuamente sistemas e agir antes que pequenos problemas se tornem grandes incidentes. Utiliza ferramentas de observabilidade, automação de alertas e análise preditiva.',
     references: [
-      { label: 'Artigo SRE Google', url: 'https://sre.google/sre-book/incident-response/' },
-      { label: 'Blog DevOps', url: 'https://devops.com/' }
+      { label: 'Google SRE Book – Incident Response', url: 'https://sre.google/sre-book/incident-response/' },
+      { label: 'Netflix Tech Blog', url: 'https://netflixtechblog.com/' }
     ],
     success: [
-      'Empresa X reduziu o tempo de resposta em 40% após implementar monitoramento proativo.',
-      'Startup Y evitou downtime crítico com alertas inteligentes.'
+      'O Google reduziu o tempo de resposta a incidentes em larga escala com o uso de SRE, monitoramento proativo e automação de alertas.',
+      'A Netflix utiliza monitoramento contínuo e automação para detectar e corrigir falhas antes que impactem os usuários.'
     ]
   },
   {
@@ -31,11 +31,12 @@ const items = [
     details: 'Processos bem definidos, playbooks e equipe treinada para resposta eficiente a qualquer incidente.',
     definition: 'Resposta Ágil a Incidentes envolve a criação de playbooks, treinamentos e simulações para garantir que a equipe saiba exatamente como agir em situações críticas, minimizando o impacto ao negócio.',
     references: [
-      { label: 'Incident Response Playbooks', url: 'https://www.pagerduty.com/resources/learn/incident-response-playbook/' }
+      { label: 'PagerDuty & Box – Case Study', url: 'https://www.pagerduty.com/customers/box/' },
+      { label: 'Slack Engineering Blog', url: 'https://slack.engineering/' }
     ],
     success: [
-      'Empresa Z restaurou serviços críticos em minutos após adotar playbooks de resposta.',
-      'Equipe ABC reduziu o impacto de incidentes com treinamentos regulares.'
+      'A Box reduziu o tempo de resolução de incidentes críticos em 50% com playbooks e resposta coordenada usando PagerDuty.',
+      'A Slack utiliza treinamentos regulares e simulações para garantir resposta rápida a incidentes, minimizando impacto ao negócio.'
     ]
   },
   {
@@ -45,12 +46,12 @@ const items = [
     details: 'Scripts, pipelines e ferramentas para automatizar tarefas repetitivas e garantir consistência.',
     definition: 'Automação Inteligente de Infraestrutura utiliza ferramentas como Terraform, Ansible e CI/CD para provisionar, monitorar e manter ambientes de forma padronizada e eficiente.',
     references: [
-      { label: 'Terraform Docs', url: 'https://www.terraform.io/docs' },
-      { label: 'Ansible Docs', url: 'https://docs.ansible.com/' }
+      { label: 'HashiCorp Case Studies', url: 'https://www.hashicorp.com/en/case-studies' },
+      { label: 'Shopify Engineering Blog', url: 'https://shopify.engineering/' }
     ],
     success: [
-      'Empresa Q acelerou o provisionamento de ambientes de horas para minutos.',
-      'Redução de erros humanos em 90% após automação de deploys.'
+      'A Starbucks automatizou o provisionamento e a segurança de mais de 100.000 dispositivos de borda usando HashiCorp Vault e Terraform.',
+      'A Shopify automatizou deploys e reduziu erros humanos em 90% com pipelines de CI/CD.'
     ]
   },
   {
@@ -60,11 +61,12 @@ const items = [
     details: 'Adoção de SLOs, SLIs, blameless postmortems e cultura de confiabilidade.',
     definition: 'Consultoria em Confiabilidade e SRE traz práticas como definição de SLOs, SLIs, postmortems sem culpa e cultura de melhoria contínua para elevar a resiliência dos sistemas.',
     references: [
-      { label: 'SRE Fundamentals', url: 'https://sre.google/sre-book/service-level-objectives/' }
+      { label: 'SLO Engineering Case Studies – Google SRE (Evernote & Home Depot)', url: 'https://landing.google.com/sre/workbook/chapters/slo-engineering-case-studies/' },
+      { label: "How Lowe's meets customer demand with Google SRE practices", url: 'https://cloud.google.com/blog/products/devops-sre/how-lowes-leverages-google-sre-practices' }
     ],
     success: [
-      'Empresa W aumentou a disponibilidade de 99,5% para 99,99% após consultoria SRE.',
-      'Redução de incidentes recorrentes com postmortems blameless.'
+      'A Home Depot implementou SLOs e cultura SRE, melhorando a confiabilidade e a comunicação entre times de desenvolvimento e operações.',
+      "A Lowe's aumentou a velocidade e confiabilidade das entregas adotando práticas SRE do Google Cloud."
     ]
   },
   {
@@ -74,11 +76,12 @@ const items = [
     details: 'Migração para cloud, integração contínua, entrega contínua e automação de deploys.',
     definition: 'Cloud & DevOps de Alta Performance envolve adoção de nuvem, pipelines de CI/CD, automação de deploys e cultura colaborativa para acelerar a entrega de valor.',
     references: [
-      { label: 'DevOps na Prática', url: 'https://devops.com/devops-best-practices/' }
+      { label: 'Nubank Engineering Blog', url: 'https://building.nubank.com.br/' },
+      { label: 'Netflix Tech Blog', url: 'https://netflixtechblog.com/' }
     ],
     success: [
-      'Empresa M reduziu o tempo de deploy de dias para minutos com CI/CD.',
-      'Adoção de cloud permitiu escalar sistemas globalmente.'
+      'O Nubank reduziu o tempo de deploy de dias para minutos com pipelines de CI/CD e automação em cloud.',
+      'A Netflix é referência mundial em cloud, automação e DevOps, acelerando entregas e escalando sistemas globalmente.'
     ]
   },
   {
@@ -88,11 +91,10 @@ const items = [
     details: 'Equipe de especialistas e ferramentas automatizadas vigiam sua infraestrutura de TI dia e noite, identificando e respondendo a anomalias antes que elas se transformem em problemas críticos.',
     definition: 'Com visibilidade completa sobre o desempenho, métricas e alertas em tempo real, você tem a tranquilidade de saber que seu negócio está sempre operacional e protegido contra interrupções inesperadas.',
     references: [
-      { label: 'Guia de Monitoramento 24x7', url: 'https://www.datadoghq.com/pt/blog/monitoramento-24x7/' }
+      { label: 'Datadog Customer Stories', url: 'https://www.datadoghq.com/customers/' }
     ],
     success: [
-      'Empresa Y manteve 99,99% de disponibilidade após implementar monitoramento 24x7.',
-      'Redução de incidentes críticos com resposta proativa a alertas.'
+      'Empresas globais como Forbes, Toyota, Mercado Libre, Uber Freight e Washington Post utilizam Datadog para monitoramento 24x7, garantindo alta disponibilidade, resposta rápida a incidentes e visibilidade total sobre a infraestrutura e aplicações.'
     ]
   },
   {
@@ -102,12 +104,12 @@ const items = [
     details: 'Integramos inteligência artificial (IA) para oferecer experiências personalizadas aos seus clientes, automatizar processos e gerar insights valiosos.',
     definition: 'Tenha um site que não apenas impressiona, mas também aprende e evolui junto com sua empresa, utilizando IA para personalização, automação e análise avançada.',
     references: [
-      { label: 'Web Performance & AI', url: 'https://web.dev/performance/' },
-      { label: 'AI for Web', url: 'https://cloud.google.com/solutions/ai-for-web' }
+      { label: 'Netflix Tech Blog', url: 'https://netflixtechblog.com/' },
+      { label: 'Shopify Engineering Blog', url: 'https://shopify.engineering/' }
     ],
     success: [
-      'Empresa Z dobrou a conversão de leads com site personalizado por IA.',
-      'Automação de atendimento e recomendações inteligentes aumentaram o engajamento dos clientes.'
+      'A Netflix aumentou o engajamento dos clientes com personalização baseada em IA.',
+      'A Shopify usa IA para recomendações e otimização de performance em lojas online.'
     ]
   },
   {
@@ -117,12 +119,12 @@ const items = [
     details: 'Desenvolvimento mais rápido, custos reduzidos e experiência de usuário consistente e de alta performance em ambas as plataformas.',
     definition: 'Entregamos apps modernos, escaláveis e prontos para conquistar o mercado, utilizando Flutter para garantir agilidade e qualidade.',
     references: [
-      { label: 'Flutter Docs', url: 'https://docs.flutter.dev/' },
-      { label: 'Flutter Showcase', url: 'https://flutter.dev/showcase' }
+      { label: 'Flutter Showcase – Nubank', url: 'https://flutter.dev/showcase' },
+      { label: 'Flutter Showcase – BMW', url: 'https://flutter.dev/showcase' }
     ],
     success: [
-      'Startup X lançou simultaneamente apps para Android e iOS com 50% menos tempo de desenvolvimento.',
-      'Empresa Y reduziu custos e manteve alta performance usando Flutter.'
+      'O Nubank lançou simultaneamente apps para Android e iOS com Flutter, acelerando o time-to-market.',
+      'A BMW reduziu custos e manteve alta performance usando Flutter para apps globais.'
     ]
   }
 ];
