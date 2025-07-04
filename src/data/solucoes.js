@@ -6,6 +6,7 @@ import cloudDevopsImg from '../assets/cloud-devops-alta-performance.png';
 import monitoramento24x7Img from '../assets/monitoramento-24x7.png';
 import sitesAltaPerformanceIaImg from '../assets/sites-alta-performance-ia.png';
 import appsNativosFlutterImg from '../assets/apps-nativos-flutter.png';
+import reactWebMobileImg from '../assets/react-web-mobile.png';
 
 export const solucoes = [
   {
@@ -55,5 +56,11 @@ export const solucoes = [
     anchor: 'apps-nativos-flutter',
     desc: 'Desenvolvemos aplicativos nativos para Android e iOS a partir de uma única base de código com Flutter.',
     img: appsNativosFlutterImg,
+  },
+  {
+    title: 'React para Web e Mobile',
+    anchor: 'react-web-mobile',
+    desc: 'Desenvolvimento de aplicações modernas, performáticas e responsivas para web e mobile com React e React Native.',
+    img: reactWebMobileImg,
   }
 ]; 
